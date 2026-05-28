@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Sonríe Centro Odontológico — Ortodoncia, blanqueamiento, odontopediatría y urgencias 24h. Agenda tu cita." />
+<title>Sonríe Centro Odontológico — Tu mejor sonrisa</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <div class="container nav-wrap">
+    <a href="#inicio" class="logo">✨ Sonríe</a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#porque">¿Por qué?</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <span id="userBadge" class="user-badge hidden"></span>
+      <button id="btnAuth" class="btn btn-primary">Ingresar</button>
+    </div>
+    <button id="burger" class="burger" aria-label="Menú">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="pill">Clínica dental de confianza</span>
+      <h1>Tu mejor <span class="grad">sonrisa</span> empieza aquí.</h1>
+      <p>Odontología moderna, cálida y segura. Tecnología digital, equipo experto y atención personalizada para toda la familia.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary btn-lg">Agendar cita</a>
+        <a href="#servicios" class="btn btn-ghost btn-lg">Ver servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>+10</strong><span>años de experiencia</span></div>
+        <div><strong>+5.000</strong><span>sonrisas felices</span></div>
+        <div><strong>24/7</strong><span>urgencias</span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="assets/hero-clinic.jpg" alt="Clínica dental moderna Sonríe" loading="eager" />
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section">
+  <div class="container">
+    <header class="section-head">
+      <span class="pill">Servicios</span>
+      <h2>Todo lo que tu sonrisa necesita</h2>
+      <p>Tratamientos modernos, precios claros y atención humana.</p>
+    </header>
+    <div id="serviciosGrid" class="grid grid-3"></div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo" class="section section-alt">
+  <div class="container">
+    <header class="section-head">
+      <span class="pill">Equipo</span>
+      <h2>Profesionales que te cuidan</h2>
+      <p>Especialistas certificados, comprometidos con tu bienestar.</p>
+    </header>
+    <div id="equipoGrid" class="grid grid-3"></div>
+  </div>
+</section>
+
+<!-- POR QUE -->
+<section id="porque" class="section">
+  <div class="container">
+    <header class="section-head">
+      <span class="pill">¿Por qué Sonríe?</span>
+      <h2>Una experiencia dental diferente</h2>
+    </header>
+    <div class="grid grid-4">
+      <div class="feature"><div class="feature-ico">🛡️</div><h3>Bioseguridad total</h3><p>Esterilización certificada y protocolos clínicos rigurosos.</p></div>
+      <div class="feature"><div class="feature-ico">💳</div><h3>Pagos flexibles</h3><p>Financiación, tarjetas, transferencia y planes a tu medida.</p></div>
+      <div class="feature"><div class="feature-ico">🦷</div><h3>Tecnología digital</h3><p>Radiografía digital, escáner 3D y diagnóstico preciso.</p></div>
+      <div class="feature"><div class="feature-ico">❤️</div><h3>Atención humana</h3><p>Te explicamos todo. Sin dolor, sin sorpresas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section section-alt">
+  <div class="container">
+    <header class="section-head">
+      <span class="pill">Contacto</span>
+      <h2>Agenda tu cita</h2>
+      <p>Te respondemos en menos de 24h. Para urgencias usa WhatsApp.</p>
+    </header>
+    <div class="contact-grid">
+      <form id="formContacto" class="card form" novalidate>
+        <div class="row">
+          <label>Nombre completo
+            <input name="nombre" type="text" required minlength="2" maxlength="80" />
+          </label>
+          <label>Correo
+            <input name="email" type="email" required />
+          </label>
+        </div>
+        <div class="row">
+          <label>Teléfono
+            <input name="telefono" type="tel" required pattern="[0-9+\s()-]{7,20}" />
+          </label>
+          <label>Servicio
+            <select name="servicio" id="selServicio" required>
+              <option value="">Selecciona…</option>
+            </select>
+          </label>
+        </div>
+        <label>Mensaje
+          <textarea name="mensaje" rows="4" maxlength="500" placeholder="Cuéntanos brevemente…"></textarea>
+        </label>
+        <!-- formsubmit honeypot + config -->
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="Nueva cita — Sonríe" />
+        <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
+        <p id="formMsg" class="form-msg"></p>
+      </form>
+      <aside class="card contact-info">
+        <h3>Información directa</h3>
+        <p>📧 <a href="mailto:delahozjostin6@gmail.com">delahozjostin6@gmail.com</a></p>
+        <p>📱 <a href="https://wa.me/573052442314" target="_blank" rel="noopener">+57 305 244 2314</a></p>
+        <p>📍 Cartagena, Colombia</p>
+        <p>🕒 Lun–Sáb 8:00 – 19:00 · Urgencias 24h</p>
+        <div class="map-stub">🗺️ Cartagena, Bolívar</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>✨ Sonríe</h4>
+      <p>Centro odontológico moderno en Cartagena.</p>
+    </div>
+    <div>
+      <h4>Enlaces</h4>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="mailto:delahozjostin6@gmail.com">delahozjostin6@gmail.com</a>
+      <a href="https://wa.me/573052442314">+57 305 244 2314</a>
+    </div>
+  </div>
+  <p class="copy">© <span id="year"></span> Sonríe Centro Odontológico. Todos los derechos reservados.</p>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/573052442314?text=Hola%20Sonr%C3%ADe%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" class="fab-wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5Zm-8.5 17a8.9 8.9 0 0 1-4.6-1.3l-.3-.2-2.9.9.9-2.8-.2-.3A9 9 0 1 1 12 20.5Zm5-6.7c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1c-.2.2-.3.2-.6.1-1.7-.9-2.9-1.5-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.4 1.9.8 2.7.9 3.6.7.6-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3Z"/></svg>
+</a>
+
+<!-- AUTH MODAL -->
+<div id="authModal" class="modal hidden" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box card">
+    <button class="modal-close" data-close aria-label="Cerrar">×</button>
+    <div class="tabs">
+      <button class="tab active" data-tab="login">Iniciar sesión</button>
+      <button class="tab" data-tab="signup">Crear cuenta</button>
+    </div>
+    <form id="formLogin" class="auth-form">
+      <label>Correo<input type="email" name="email" required autocomplete="email" /></label>
+      <label>Contraseña<input type="password" name="password" required autocomplete="current-password" /></label>
+      <button class="btn btn-primary btn-lg" type="submit">Entrar</button>
+      <p class="auth-msg" id="loginMsg"></p>
+    </form>
+    <form id="formSignup" class="auth-form hidden">
+      <label>Nombre<input type="text" name="nombre" required minlength="2" maxlength="60" /></label>
+      <label>Correo<input type="email" name="email" required autocomplete="email" /></label>
+      <label>Contraseña
+        <input type="password" name="password" required minlength="8" autocomplete="new-password" />
+        <small class="hint">Mínimo 8 caracteres, 1 mayúscula, 1 número.</small>
+      </label>
+      <div class="strength"><div id="strengthBar"></div></div>
+      <button class="btn btn-primary btn-lg" type="submit">Crear cuenta</button>
+      <p class="auth-msg" id="signupMsg"></p>
+    </form>
+    <p class="auth-foot">🔒 Tus datos se cifran localmente con PBKDF2-SHA256 (210.000 iteraciones).</p>
+  </div>
+</div>
+
+<!-- MODAL SERVICIO -->
+<div id="servicioModal" class="modal hidden">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box card" id="servicioModalContent"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
